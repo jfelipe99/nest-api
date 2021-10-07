@@ -1,0 +1,62 @@
+###Gera Token JWT para autorização
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+    "username": "user1@user.com",
+    "password": "123456"
+}
+
+###
+POST http://localhost:3000/api/products
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzZXJuYW1lIjoidXNlcjFAdXNlci5jb20iLCJpYXQiOjE2MzM2MzczNDgsImV4cCI6MTYzMzYzNzQwOH0.HJI5u2uVFTjVSpC7O11XvLKnrkTGMJoRAxkg813pQeU
+
+{
+    "price": 850.99,
+    "image": "https:vulcabras.com",
+    "brand": "SAMSUNG",
+    "title": "Fone de Ouvido",
+    "reviewScore": 5
+}
+###
+GET http://localhost:3000/api/product
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzZXJuYW1lIjoidXNlcjFAdXNlci5jb20iLCJpYXQiOjE2MzM2Mzc0NzYsImV4cCI6MTYzMzYzNzUzNn0.cqSEVWK5lKscyL4Qo0sf6iKIqiHqvb8IyIeSXcFTzVM
+
+###
+GET http://localhost:3000/api/product/524bafc7-39b4-4daa-9cd6-6c8cff67fb4f
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzZXJuYW1lIjoidXNlcjFAdXNlci5jb20iLCJpYXQiOjE2MzM2Mzc1ODgsImV4cCI6MTYzMzYzNzY0OH0.9Jd4iWA9Ew467lW9qHW1XH-APuzQg7MVxbcex3-zeh0
+
+
+POST http://localhost:3000/clients
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzZXJuYW1lIjoidXNlcjFAdXNlci5jb20iLCJpYXQiOjE2MzM2Mzc0MTQsImV4cCI6MTYzMzYzNzQ3NH0.4vbHe-JHPFQ6iEJ7tMYH9KcYdcCs9VeMh9wlWVvG4XM
+
+{
+    "name": "Cliente Top 1",
+    "email": "jaaao.felipe@gmail.com",
+    "products": [
+        {
+           "title": "Fone de Ouvido"//Recupera o Objeto pelo title
+        }
+    ]
+}
+
+###
+GET http://localhost:3000/clients
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzZXJuYW1lIjoidXNlcjFAdXNlci5jb20iLCJpYXQiOjE2MzM2Mzc0MTQsImV4cCI6MTYzMzYzNzQ3NH0.4vbHe-JHPFQ6iEJ7tMYH9KcYdcCs9VeMh9wlWVvG4XM
+###
+GET http://localhost:3000/clients/c7947a5c-173d-4ae3-b461-56ba8768b9a0
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzZXJuYW1lIjoidXNlcjFAdXNlci5jb20iLCJpYXQiOjE2MzM2MzQ4MTIsImV4cCI6MTYzMzYzNDg3Mn0.9XV29OfBydRpgZVvZ-wgSHjbMuTnInT5pMuP0bBhxCM
+###
+PATCH  http://localhost:3000/clients/c7947a5c-173d-4ae3-b461-56ba8768b9a0
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzZXJuYW1lIjoidXNlcjFAdXNlci5jb20iLCJpYXQiOjE2MzM2MzQ4MTIsImV4cCI6MTYzMzYzNDg3Mn0.9XV29OfBydRpgZVvZ-wgSHjbMuTnInT5pMuP0bBhxCM
+Content-Type: application/json
+
+{
+    "name": "Teste Cliente"
+}
+
+###
+DELETE http://localhost:3000/clients/a582d8fe-73dc-42f9-a690-e8924b525c4c
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzZXJuYW1lIjoidXNlcjFAdXNlci5jb20iLCJpYXQiOjE2MzM2Mzc0MTQsImV4cCI6MTYzMzYzNzQ3NH0.4vbHe-JHPFQ6iEJ7tMYH9KcYdcCs9VeMh9wlWVvG4XM
